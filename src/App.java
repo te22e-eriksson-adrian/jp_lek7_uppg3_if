@@ -6,7 +6,7 @@ public class App {
 
         //A
         System.out.println("Detta är ett test för att se om du är berättigad för skatteavdrag för två bostäder.");
-        System.out.print("Hur långt ifrån din arbetsplats bor du (är du skriven): ");
+        System.out.print("Hur långt ifrån din arbetsplats bor du i km (är du skriven): ");
         int distans = tangentbord.nextInt();
         tangentbord.nextLine();
         if (distans>=50){
@@ -28,6 +28,21 @@ public class App {
             }
         }else{
             System.out.println("Du är tyvärr inte berättigad skatteavdrag.");
+        }
+
+        //B
+        System.out.println("      ");
+        System.out.println("Inmata beräkning nedan (ex. 5+3 eller 5-3)");
+        String beräkning = tangentbord.nextLine();
+        int plus_plats = beräkning.indexOf("+");
+        int svar;
+        if (plus_plats==-1){
+            int utsträckning = beräkning.length();
+            svar = beräkning.indexOf(utsträckning-utsträckning)-beräkning.indexOf(utsträckning);
+        }
+        else{
+            svar = beräkning.indexOf(plus_plats-1)+beräkning.indexOf(plus_plats+1);
+            System.out.println("Svaret är: "+beräkning.indexOf(plus_plats-1)+"+"+beräkning.indexOf(plus_plats+1)+"="+svar);
         }
         tangentbord.close();
     }
