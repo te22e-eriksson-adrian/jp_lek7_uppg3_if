@@ -37,12 +37,23 @@ public class App {
         int plus_plats = beräkning.indexOf("+");
         int svar;
         if (plus_plats==-1){
-            int utsträckning = beräkning.length();
-            svar = beräkning.indexOf(utsträckning-utsträckning)-beräkning.indexOf(utsträckning);
+            int minus_plats=beräkning.indexOf("-");
+            String tal1_text = beräkning.substring(0, minus_plats);
+            String tal2_text = beräkning.substring(minus_plats+1, beräkning.length());
+            System.out.println(tal1_text+"+"+tal2_text);
+            int tal1 = Integer.parseInt(tal1_text);
+            int tal2 = Integer.parseInt(tal2_text);
+            svar = tal1-tal2;
+            System.out.println("Svaret är: "+svar);
         }
         else{
-            svar = beräkning.indexOf(plus_plats-1)+beräkning.indexOf(plus_plats+1);
-            System.out.println("Svaret är: "+beräkning.indexOf(plus_plats-1)+"+"+beräkning.indexOf(plus_plats+1)+"="+svar);
+            String tal1_text = beräkning.substring(0, plus_plats);
+            String tal2_text = beräkning.substring(plus_plats+1, beräkning.length());
+            System.out.println(tal1_text+"+"+tal2_text);
+            int tal1 = Integer.parseInt(tal1_text);
+            int tal2 = Integer.parseInt(tal2_text);
+            svar = tal1+tal2; 
+            System.out.println("Svaret är: "+svar);
         }
         tangentbord.close();
     }
