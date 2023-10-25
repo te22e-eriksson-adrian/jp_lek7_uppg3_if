@@ -55,6 +55,20 @@ public class App {
             svar = tal1+tal2; 
             System.out.println("Svaret är: "+svar);
         }
+
+        //C
+        System.out.println("      ");
+        int[] heltal_array = new int[3];
+        System.out.print("Inmata heltal 1 här: ");
+        heltal_array [0] = tangentbord.nextInt();
+        tangentbord.nextLine();
+        System.out.print("Inmata heltal 2 här: ");
+        heltal_array [1] = tangentbord.nextInt();
+        tangentbord.nextLine();
+        System.out.print("Inmata heltal 3 här: ");
+        heltal_array [2] = tangentbord.nextInt();
+        tangentbord.nextLine();
+        //jj
         tangentbord.close();
     }
 }
